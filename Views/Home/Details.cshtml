@@ -1,0 +1,117 @@
+<style>
+
+body{
+    background:#141414;
+    color:white;
+}
+
+.movie-container{
+    max-width:1200px;
+    margin:50px auto;
+    display:flex;
+    gap:40px;
+}
+
+.poster img{
+    width:300px;
+    border-radius:10px;
+}
+
+.details{
+    flex:1;
+}
+
+.details h1{
+    font-size:42px;
+}
+
+.details h4{
+    color:#f5c518;
+    margin:20px 0;
+}
+
+.details p{
+    color:#ddd;
+    line-height:1.8;
+    font-size:18px;
+}
+
+.buttons{
+    margin-top:30px;
+}
+
+.buttons button{
+    padding:12px 25px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+    margin-right:15px;
+}
+
+.play-btn{
+    background:#e50914;
+    color:white;
+}
+
+.play-btn:hover{
+    background:#c11119;
+}
+
+.fav-btn{
+    background:#333;
+    color:white;
+}
+
+.fav-btn:hover{
+    background:#555;
+}
+
+</style>
+
+@{
+    var movie = ViewBag.movie_details;
+}
+
+@if (movie != null)
+{
+    <div class="movie-container">
+
+        <div class="poster">
+            <img src="https://image.tmdb.org/t/p/w500@(movie.PosterPath)" />
+        </div>
+
+        <div class="details">
+            <h1>@movie.Title</h1>
+
+            <h4>⭐ @movie.VoteAverage / 10</h4>
+
+            <p>@movie.Overview</p>
+
+            <div class="buttons">
+                <button class="play-btn">▶ Play</button>
+                @if (ViewBag.IsFavorite)
+                {
+                    <form asp-action="RemoveFavorite" method="post">
+                        <input type="hidden" name="movieId" value="@movie.Id" />
+
+                        <button class="fav-btn">
+                            Remove Favorite
+                        </button>
+                    </form>
+                }
+                else
+                {
+                    <form asp-action="AddFavorite" method="post">
+                        <input type="hidden" name="movieId" style="margin-top: 10px;" value="@movie.Id" />
+
+                        <button class="fav-btn">
+                            ❤ Add Favorite
+                        </button>
+                    </form>
+                }
+            </div>
+        </div>
+
+    </div>
+}

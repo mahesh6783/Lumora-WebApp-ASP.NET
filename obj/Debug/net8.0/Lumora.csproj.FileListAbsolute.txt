@@ -1,0 +1,8 @@
+C:\Users\mahes\Desktop\dotnet\Lumora\obj\Debug\net8.0\Lumora.csproj.AssemblyReference.cache
+C:\Users\mahes\Desktop\dotnet\Lumora\obj\Debug\net8.0\Lumora.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mahes\Desktop\dotnet\Lumora\obj\Debug\net8.0\Lumora.AssemblyInfoInputs.cache
+C:\Users\mahes\Desktop\dotnet\Lumora\obj\Debug\net8.0\Lumora.AssemblyInfo.cs
+C:\Users\mahes\Desktop\dotnet\Lumora\obj\Debug\net8.0\Lumora.csproj.CoreCompileInputs.cache
+C:\Users\mahes\Desktop\dotnet\Lumora\obj\Debug\net8.0\Lumora.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\mahes\Desktop\dotnet\Lumora\obj\Debug\net8.0\Lumora.RazorAssemblyInfo.cache
+C:\Users\mahes\Desktop\dotnet\Lumora\obj\Debug\net8.0\Lumora.RazorAssemblyInfo.cs

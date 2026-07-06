@@ -1,0 +1,38 @@
+<div class="row">
+
+@foreach (Lumora.Controllers.HomeController.Movie movie in ViewBag.Favorites)
+{
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
+
+        <div class="card bg-dark text-white">
+            <a asp-controller="Home"
+                asp-action="Details"
+                asp-route-id="@movie.Id">
+                <img src="https://image.tmdb.org/t/p/w500@(movie.PosterPath)"
+                    class="card-img-top">
+            </a>
+
+            <div class="card-body text-center">
+
+                <h6>@movie.Title</h6>
+
+                <form asp-action="RemoveFavorite" method="post">
+
+                    <input type="hidden"
+                           name="movieId"
+                           value="@movie.Id"/>
+
+                    <button class="btn btn-danger w-100">
+                        Remove
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+}
+
+</div>

@@ -1,0 +1,60 @@
+<div class="register-container">
+    <h2>Login</h2>
+    <form method="POST"> 
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" placeholder="Enter your email">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" placeholder="Enter password">
+        </div>
+        <button type="submit" class="btn btn-warning w-100">
+            Login
+        </button>
+    </form>
+
+</div>
+@if (TempData["Success"] != null)
+{
+    <script>
+        alert('@TempData["Success"]');
+    </script>
+}
+<style>
+    body {
+        background: #121212;
+        color: #fff;
+    }
+
+    .register-container {
+        max-width: 400px;
+        margin: 60px auto;
+        padding: 30px;
+        background: #1e1e1e;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, .4);
+    }
+
+    .register-container h2 {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .form-control {
+        background: #2a2a2a;
+        border: 1px solid #444;
+        color: white;
+    }
+
+    .form-control:focus {
+        background: #2a2a2a;
+        color: white;
+        border-color: #ffc107;
+        box-shadow: none;
+    }
+
+    .form-label {
+        color: #ddd;
+    }
+</style>

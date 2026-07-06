@@ -1,0 +1,115 @@
+<style>
+
+.movie-row {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 20px;
+
+    /* Hide scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.movie-row::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.movie-card {
+    min-width: 200px;
+}
+
+.movie-card img {
+    width: 200px;
+    border-radius: 10px;
+}
+.banner{
+    height:500px;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+    border-radius: 14px;
+}
+
+.overlay{
+    position:absolute;
+    bottom:60px;
+    left:50px;
+    color:white;
+    max-width:500px;
+}
+
+.overlay h1{
+    font-size:48px;
+}
+
+.overlay p{
+    font-size:18px;
+    margin-top:10px;
+}
+
+.overlay button{
+    padding:10px 20px;
+    margin-right:10px;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+}
+
+</style>
+
+
+@{
+    var banner = ViewBag.BannerMovie;
+}
+
+@if (banner != null)
+{
+    <div class="banner"
+         style="background-image:url('https://image.tmdb.org/t/p/original@(banner.BackdropPath)')">
+
+        <div class="overlay">
+            <h1>@banner.Title</h1>
+
+            <p>
+                @(banner.Overview.Length > 150
+                    ? banner.Overview.Substring(0,150) + "..."
+                    : banner.Overview)
+            </p>
+
+            <button>▶ Play</button>
+            <button>ℹ More Info</button>
+        </div>
+
+    </div>
+}
+
+
+<h4 style="margin-top: 20px; margin-left: 25px; color:white">Popular Movies</h4>
+<div class="movie-row">
+@foreach (var p_movie in ViewBag.p_Movies)
+{
+    <div class="movie-card">
+        <a asp-controller="Home"
+        asp-action="Details"
+        asp-route-id="@p_movie.Id">
+            <img src="https://image.tmdb.org/t/p/w500@(p_movie.PosterPath)" />
+        </a>
+
+        <h6 style="color:white">@p_movie.Title</h6>
+    </div>
+}
+</div>
+
+<h4 style="margin-top: 10px; margin-left: 25px;  color:white">Action Movies</h4>
+<div class="movie-row">
+@foreach (var a_movies in ViewBag.a_movies)
+{
+    <div class="movie-card">
+        <img src="https://image.tmdb.org/t/p/w500@(a_movies.PosterPath)" />
+
+        <h6 style="color:white">@a_movies.Title</h6>
+    </div>
+}
+</div>
+

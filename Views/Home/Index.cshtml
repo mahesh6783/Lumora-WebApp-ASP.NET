@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div data-bs-theme="dark" class="bg-dark text-light" style=" padding: 0 12px;">
+
+    <div class="text-center py-5">
+        <h1 class="display-4 fw-bold mb-3">Lumora</h1>
+        <p class="col-lg-6 mx-auto fs-5 text-light-emphasis mb-4">
+            A focused, no-clutter home for discovering, tracking, and talking about
+            the movies you actually care about.
+        </p>
+        <a class="btn btn-warning btn-lg me-2" asp-controller="Home" asp-action="Privacy">Get Started</a>
+        <a class="btn btn-outline-light btn-lg" asp-controller="Home" asp-action="Privacy">Learn More</a>
+    </div>
+
+    <div class="row text-center border-top border-secondary py-4 mb-5">
+        <div class="col-4">
+            <div class="fs-2 fw-bold text-warning">10K+</div>
+            <div class="text-light-emphasis small">Movies Tracked</div>
+        </div>
+        <div class="col-4">
+            <div class="fs-2 fw-bold text-warning">50K+</div>
+            <div class="text-light-emphasis small">Reviews Written</div>
+        </div>
+        <div class="col-4">
+            <div class="fs-2 fw-bold text-warning">25K+</div>
+            <div class="text-light-emphasis small">Active Members</div>
+        </div>
+    </div>
+
+    <div class="row align-items-center mb-5 pb-4 border-bottom border-secondary">
+        <div class="col-md-6">
+            <h2 class="mb-3">Curated, not overwhelming</h2>
+            <p class="text-light-emphasis">
+                We don't drown you in endless catalogs. Lumora surfaces a short,
+                hand-picked list of recommendations every week, so deciding what to
+                watch never feels like a chore.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <div class="bg-black bg-opacity-50 border border-secondary rounded-3 p-5 text-center text-light-emphasis">
+                Curated Picks
+            </div>
+        </div>
+    </div>
+
+    <div class="row align-items-center mb-5 pb-4 border-bottom border-secondary">
+        <div class="col-md-6 order-md-2">
+            <h2 class="mb-3">Your watchlist, your way</h2>
+            <p class="text-light-emphasis">
+                Save what you want to watch, mark what you've finished, and pick up
+                right where you left off — across any device.
+            </p>
+        </div>
+        <div class="col-md-6 order-md-1">
+            <div class="bg-black bg-opacity-50 border border-secondary rounded-3 p-5 text-center text-light-emphasis">
+                Personal Watchlist
+            </div>
+        </div>
+    </div>
+
+    <div class="row align-items-center mb-5">
+        <div class="col-md-6">
+            <h2 class="mb-3">Real voices, real opinions</h2>
+            <p class="text-light-emphasis">
+                Every review on Lumora comes from an actual viewer — no bots, no
+                paid placements, just honest takes from people who watched it.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <div class="bg-black bg-opacity-50 border border-secondary rounded-3 p-5 text-center text-light-emphasis">
+                Community Reviews
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center py-5">
+        <h2 class="mb-3">Ready to find your next favorite film?</h2>
+        <a class="btn btn-warning btn-lg" asp-controller="Home" asp-action="Privacy">Join Lumora</a>
+    </div>
+
+</div>

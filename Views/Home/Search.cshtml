@@ -1,0 +1,74 @@
+@{
+    ViewData["Title"] = "Search";
+}
+
+<div class="container mt-5">
+
+    <!-- Search Box -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-6 col-md-8">
+
+            <form asp-action="Search" method="get">
+                <div class="input-group">
+
+                    <input type="text"
+                           name="movieName"
+                           class="form-control"
+                           placeholder="Search movies..."
+                           value="@Context.Request.Query["movieName"]">
+
+                    <button class="btn btn-warning" type="submit">
+                        Search
+                    </button>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    @if (ViewBag.Movies != null)
+    {
+        <div class="row">
+
+            @foreach (Lumora.Controllers.HomeController.Movie movie in ViewBag.Movies)
+            {
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
+
+                    <div class="card bg-dark text-white border-0 h-100 shadow">
+
+                        <img src="https://image.tmdb.org/t/p/w500@(movie.PosterPath)"
+                             class="card-img-top"
+                             style="height:300px; object-fit:cover;">
+
+                        <div class="card-body text-center">
+
+                            <h6 class="card-title">
+                                @movie.Title
+                            </h6>
+
+                            <small class="text-secondary">
+                                @movie.ReleaseDate
+                            </small>
+
+                        </div>
+
+                        <div class="card-footer bg-dark border-0">
+
+                            <a asp-action="Details"
+                               asp-route-id="@movie.Id"
+                               class="btn btn-warning w-100">
+                                Details
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+
+        </div>
+    }
+
+</div>
